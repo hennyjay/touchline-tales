@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Touchline Tales</title>
+  <title>Touchline Tales · Football Stories</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --gold: #d4af37;
       --dark: #0d0d0d;
       --card: #1a1a1a;
+      --gradient-gold: linear-gradient(90deg, #d4af37, #f1e07a, #d4af37);
     }
 
     body {
@@ -26,17 +27,13 @@
       text-align: center;
       padding: 6rem 1rem;
       color: var(--gold);
+      text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+      animation: glowPulse 5s ease-in-out infinite alternate;
     }
 
-    header h1 {
-      font-size: 3rem;
-      margin: 0;
-    }
-
-    header p {
-      color: #fff;
-      font-size: 1.3rem;
-      margin-top: 0.5rem;
+    @keyframes glowPulse {
+      from { text-shadow: 0 0 10px rgba(212,175,55,0.5); }
+      to   { text-shadow: 0 0 25px rgba(212,175,55,0.8); }
     }
 
     nav {
@@ -54,108 +51,51 @@
       margin: 0 1.2rem;
       font-weight: 600;
       letter-spacing: 0.5px;
-      transition: color 0.3s;
+      background-image: var(--gradient-gold);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      background-size: 200%;
+      transition: background-position 0.6s ease, opacity 0.3s;
+      opacity: 0.8;
     }
 
     nav a:hover {
-      color: var(--gold);
+      background-position: 100%;
+      opacity: 1;
     }
 
-    section {
+    main {
       max-width: 900px;
       margin: 3rem auto;
       padding: 0 1.5rem;
     }
 
-    .intro {
-      text-align: center;
-    }
-
-    .intro h2 {
-      color: var(--gold);
-      font-size: 1.8rem;
-    }
-
-    .intro p {
-      color: #ccc;
-      max-width: 600px;
-      margin: 1rem auto;
-    }
-
-    .intro a {
-      display: inline-block;
-      margin-top: 1.2rem;
-      background-color: var(--gold);
-      color: var(--dark);
-      padding: 0.9rem 1.8rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s;
-    }
-
-    .intro a:hover {
-      background-color: #b9972b;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .card {
+    article {
       background-color: var(--card);
       border-left: 4px solid var(--gold);
       padding: 1.5rem;
+      margin-bottom: 2rem;
       border-radius: 10px;
       box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
       text-decoration: none;
       color: inherit;
       display: block;
-      position: relative;
-      overflow: hidden;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
+    article:hover {
+      transform: translateY(-4px);
       box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
-      cursor: pointer;
     }
 
-    .card img {
-      width: 60px;
-      height: auto;
-      transition: transform 0.3s ease, filter 0.3s ease;
-    }
-
-    .card:hover img {
-      transform: scale(1.05);
-      filter: brightness(1.3);
-    }
-
-    .card::after {
-      content: "View on Transfermarkt →";
-      position: absolute;
-      bottom: 15px;
-      left: 20px;
+    article h2 {
       color: var(--gold);
-      font-size: 0.85rem;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: all 0.3s ease;
+      margin-top: 0;
     }
 
-    .card:hover::after {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .card h3 {
-      color: var(--gold);
-      margin-top: 0.5rem;
+    article p {
+      color: #ccc;
     }
 
     footer {
@@ -177,17 +117,12 @@
     footer a:hover {
       text-decoration: underline;
     }
-
-    @media (max-width: 700px) {
-      header h1 { font-size: 2.2rem; }
-      .intro h2 { font-size: 1.5rem; }
-    }
   </style>
 </head>
 <body>
   <header>
     <h1>Touchline Tales</h1>
-    <p>Exploring iconic football clubs across the globe 🌍</p>
+    <p>Stories beyond the pitch · Football culture, history & passion ⚽</p>
   </header>
 
   <nav>
@@ -197,69 +132,22 @@
     <a href="contact.html">Contact</a>
   </nav>
 
-  <section class="intro">
-    <h2>Welcome to Touchline Tales</h2>
-    <p>Dive into the stories, rivalries, and history of football’s most legendary clubs — from Buenos Aires to Bremen, the spirit of the game connects us all.</p>
-    <a href="clubs.html">Explore All Clubs →</a>
-  </section>
+  <main>
+    <article onclick="window.location.href='articles/barcelona.html'">
+      <h2>🇪🇸 FC Barcelona — The Soul of Catalonia</h2>
+      <p>Inside the legacy of “Més que un club” and how Cruyff’s philosophy shaped modern football.</p>
+    </article>
 
-  <section>
-    <div class="grid">
-      <a href="https://www.transfermarkt.de/fc-barcelona/startseite/verein/131" target="_blank" class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg" alt="Barcelona logo">
-        <h3>FC Barcelona</h3>
-        <p>“Més que un club” — Catalonia’s pride and football artistry.</p>
-      </a>
+    <article onclick="window.location.href='articles/bayern.html'">
+      <h2>🇩🇪 FC Bayern München — The Machine of Munich</h2>
+      <p>Discipline, dominance, and the German way — a story of relentless excellence.</p>
+    </article>
 
-      <a href="https://www.transfermarkt.de/real-madrid/startseite/verein/418" target="_blank" class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg" alt="Real Madrid logo">
-        <h3>Real Madrid CF</h3>
-        <p>The most decorated club in Europe — home of champions.</p>
-      </a>
-
-      <a href="https://www.transfermarkt.de/manchester-united/startseite/verein/985" target="_blank" class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg" alt="Manchester United logo">
-        <h3>Manchester United</h3>
-        <p>The Red Devils of Old Trafford — history, glory, and legacy.</p>
-      </a>
-
-      <a href="https://www.transfermarkt.de/sv-werder-bremen/startseite/verein/86" target="_blank" class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/F/Fc/SV-Werder-Bremen-Logo.svg" alt="Werder Bremen logo">
-        <h3>SV Werder Bremen</h3>
-        <p>The green heart of northern Germany — loyal, proud, and loud.</p>
-      </a>
-
-      <a href="https://www.transfermarkt.de/fc-bayern-munchen/startseite/verein/27" target="_blank" class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/en/1/1f/FC_Bayern_München_logo_%282017%29.svg" alt="Bayern logo">
-        <h3>FC Bayern München</h3>
-        <p>Record champions of Germany — a powerhouse of consistency.</p>
-      </a>
-
-      <a href="https://www.transfermarkt.de/juventus-turin/startseite/verein/506" target="_blank" class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/en/3/30/Juventus_FC_2017_logo.svg" alt="Juventus logo">
-        <h3>Juventus FC</h3>
-        <p>The Old Lady of Turin — elegance, dominance, and black & white glory.</p>
-      </a>
-
-      <a href="https://www.transfermarkt.de/boca-juniors/startseite/verein/189" target="_blank" class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/en/0/05/Boca_Juniors_logo18.svg" alt="Boca Juniors logo">
-        <h3>Boca Juniors</h3>
-        <p>Blue and yellow passion from Buenos Aires — La Bombonera lives.</p>
-      </a>
-
-      <a href="https://www.transfermarkt.de/river-plate/startseite/verein/1009" target="_blank" class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/en/3/30/Club_Atl%C3%A9tico_River_Plate_logo.svg" alt="River Plate logo">
-        <h3>River Plate</h3>
-        <p>Argentina’s red and white giants — eternal rivals of Boca Juniors.</p>
-      </a>
-
-      <a href="https://www.transfermarkt.de/ajax-amsterdam/startseite/verein/610" target="_blank" class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/en/7/79/Ajax_Amsterdam.svg" alt="Ajax logo">
-        <h3>Ajax Amsterdam</h3>
-        <p>Home of total football — a factory of legends and visionaries.</p>
-      </a>
-    </div>
-  </section>
+    <article onclick="window.location.href='articles/boca.html'">
+      <h2>🇦🇷 Boca Juniors — The Heartbeat of Buenos Aires</h2>
+      <p>From La Bombonera to eternal passion — exploring the soul of South American football.</p>
+    </article>
+  </main>
 
   <footer>
     <p>© 2025 Touchline Tales</p>
