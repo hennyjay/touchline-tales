@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FC Barcelona · Touchline Tales</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #d4af37;
+      --dark: #0d0d0d;
+      --card: #1a1a1a;
+      --gradient-gold: linear-gradient(90deg, #d4af37, #f1e07a, #d4af37);
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background-color: var(--dark);
+      color: #f1f1f1;
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    header {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                  url("https://images.unsplash.com/photo-1608198093002-ad4e005484b2?auto=format&fit=crop&w=1500&q=80") center/cover no-repeat;
+      text-align: center;
+      padding: 6rem 1rem;
+      color: var(--gold);
+      text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+      animation: glowPulse 5s ease-in-out infinite alternate;
+    }
+
+    @keyframes glowPulse {
+      from { text-shadow: 0 0 10px rgba(212,175,55,0.5); }
+      to   { text-shadow: 0 0 25px rgba(212,175,55,0.8); }
+    }
+
+    nav {
+      background-color: #121212;
+      text-align: center;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      text-decoration: none;
+      margin: 0 1.2rem;
+      font-weight: 600;
+      background-image: var(--gradient-gold);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      background-size: 200%;
+      transition: background-position 0.6s ease, opacity 0.3s;
+      opacity: 0.8;
+    }
+
+    nav a:hover {
+      background-position: 100%;
+      opacity: 1;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+
+    article {
+      background-color: var(--card);
+      padding: 2rem;
+      border-left: 4px solid var(--gold);
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    }
+
+    h1, h2 {
+      color: var(--gold);
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+      display: block;
+    }
+
+    p {
+      color: #ccc;
+      margin-bottom: 1rem;
+    }
+
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      background: var(--gradient-gold);
+      color: var(--dark);
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+
+    a.button:hover {
+      transform: translateY(-2px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #121212;
+      border-top: 1px solid #333;
+      color: #999;
+      font-size: 0.9rem;
+      margin-top: 4rem;
+    }
+
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../clubs.html">Clubs</a>
+    <a href="../about.html">About</a>
+    <a href="../contact.html">Contact</a>
+  </nav>
+
+  <header>
+    <h1>FC Barcelona</h1>
+    <p>“Més que un club” — More Than Just Football</p>
+  </header>
+
+  <main>
+    <article>
+      <img src="https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg" alt="FC Barcelona crest">
+      
+      <h2>The Origins of Greatness</h2>
+      <p>
+        Founded in 1899 by a group of Swiss, English, and Catalan footballers led by Joan Gamper,
+        FC Barcelona quickly became more than a team. It grew into a cultural and political symbol of Catalonia.
+      </p>
+
+      <h2>The Cruyff Revolution</h2>
+      <p>
+        In the late 1980s, Johan Cruyff introduced the “Dream Team” and the philosophy of total football.
+        This philosophy still runs through the DNA of Barcelona’s academy — La Masia.
+      </p>
+
+      <h2>Messi and the Modern Era</h2>
+      <p>
+        Lionel Messi redefined what one player could mean to a club. Between 2008 and 2015, under Pep Guardiola,
+        Barcelona dominated world football with a brand of play built on skill, intelligence, and heart.
+      </p>
+
+      <h2>Legacy</h2>
+      <p>
+        Barcelona is not just about trophies — it’s about identity, belonging, and art in motion. 
+        The club remains a beacon for beautiful football, even amid modern challenges.
+      </p>
+
+      <a href="https://www.transfermarkt.de/fc-barcelona/startseite/verein/131" target="_blank" class="button">View on Transfermarkt →</a>
+    </article>
+  </main>
+
+  <footer>
+    <p>© 2025 Touchline Tales</p>
+    <p>
+      <a href="../about.html">About</a> ·
+      <a href="../clubs.html">Clubs</a> ·
+      <a href="../contact.html">Contact</a>
+    </p>
+  </footer>
+</body>
+</html>
