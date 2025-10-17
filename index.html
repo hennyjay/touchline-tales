@@ -11,6 +11,7 @@
       --dark: #0d0d0d;
       --card: #1a1a1a;
     }
+
     body {
       font-family: "Inter", sans-serif;
       background-color: var(--dark);
@@ -18,6 +19,7 @@
       margin: 0;
       line-height: 1.6;
     }
+
     header {
       background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
                   url("https://images.unsplash.com/photo-1608222351212-9b6ff86d2c9c?auto=format&fit=crop&w=1400&q=80") center/cover no-repeat;
@@ -25,15 +27,18 @@
       padding: 6rem 1rem;
       color: var(--gold);
     }
+
     header h1 {
       font-size: 3rem;
       margin: 0;
     }
+
     header p {
       color: #fff;
       font-size: 1.3rem;
       margin-top: 0.5rem;
     }
+
     nav {
       background-color: #121212;
       text-align: center;
@@ -42,6 +47,7 @@
       top: 0;
       z-index: 10;
     }
+
     nav a {
       color: #f1f1f1;
       text-decoration: none;
@@ -50,26 +56,32 @@
       letter-spacing: 0.5px;
       transition: color 0.3s;
     }
+
     nav a:hover {
       color: var(--gold);
     }
+
     section {
       max-width: 900px;
       margin: 3rem auto;
       padding: 0 1.5rem;
     }
+
     .intro {
       text-align: center;
     }
+
     .intro h2 {
       color: var(--gold);
       font-size: 1.8rem;
     }
+
     .intro p {
       color: #ccc;
       max-width: 600px;
       margin: 1rem auto;
     }
+
     .intro a {
       display: inline-block;
       margin-top: 1.2rem;
@@ -81,15 +93,18 @@
       font-weight: 600;
       transition: all 0.3s;
     }
+
     .intro a:hover {
       background-color: #b9972b;
     }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 1.5rem;
       margin-top: 2rem;
     }
+
     .card {
       background-color: var(--card);
       border-left: 4px solid var(--gold);
@@ -100,19 +115,49 @@
       text-decoration: none;
       color: inherit;
       display: block;
+      position: relative;
+      overflow: hidden;
     }
+
     .card:hover {
       transform: translateY(-5px);
       box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+      cursor: pointer;
     }
+
     .card img {
       width: 60px;
       height: auto;
+      transition: transform 0.3s ease, filter 0.3s ease;
     }
+
+    .card:hover img {
+      transform: scale(1.05);
+      filter: brightness(1.3);
+    }
+
+    .card::after {
+      content: "View on Transfermarkt →";
+      position: absolute;
+      bottom: 15px;
+      left: 20px;
+      color: var(--gold);
+      font-size: 0.85rem;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover::after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     .card h3 {
       color: var(--gold);
       margin-top: 0.5rem;
     }
+
     footer {
       text-align: center;
       padding: 2rem;
@@ -122,14 +167,17 @@
       font-size: 0.9rem;
       margin-top: 4rem;
     }
+
     footer a {
       color: var(--gold);
       text-decoration: none;
       margin: 0 0.5rem;
     }
+
     footer a:hover {
       text-decoration: underline;
     }
+
     @media (max-width: 700px) {
       header h1 { font-size: 2.2rem; }
       .intro h2 { font-size: 1.5rem; }
@@ -142,36 +190,103 @@
     <p>Exploring iconic football clubs across the globe 🌍</p>
   </header>
 
-<nav>
-  <a href="index.html">Home</a>
-  <a href="clubs.html">Clubs</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-</nav>
-
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="clubs.html">Clubs</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
   <section class="intro">
     <h2>Welcome to Touchline Tales</h2>
     <p>Dive into the stories, rivalries, and history of football’s most legendary clubs — from Buenos Aires to Bremen, the spirit of the game connects us all.</p>
-    <a href="clubs.html">Explore the Clubs →</a>
+    <a href="clubs.html">Explore All Clubs →</a>
   </section>
 
   <section>
     <div class="grid">
-      <a href="barcelona.html" class="card">
+      <!-- FC Barcelona -->
+      <a href="https://www.transfermarkt.com/fc-barcelona/startseite/verein/131" target="_blank" class="card">
         <img src="https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg" alt="Barcelona logo">
         <h3>FC Barcelona</h3>
-        <p>“Més que un club” — more than football. Discover the Catalan powerhouse.</p>
+        <p>“Més que un club” — Catalonia’s pride and football artistry.</p>
       </a>
-      <a href="werder-bremen.html" class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/SV-Werder-Bremen-Logo.svg" alt="Werder Bremen logo">
-        <h3>Werder Bremen</h3>
-        <p>The heart of northern Germany — green, passionate, and loyal.</p>
+
+      <!-- Real Madrid -->
+      <a href="https://www.transfermarkt.com/real-madrid/startseite/verein/418" target="_blank" class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg" alt="Real Madrid logo">
+        <h3>Real Madrid CF</h3>
+        <p>The most decorated club in Europe — home of champions.</p>
       </a>
-      <a href="manutd.html" class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg" alt="Man Utd logo">
+
+      <!-- Manchester United -->
+      <a href="https://www.transfermarkt.com/manchester-united/startseite/verein/985" target="_blank" class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg" alt="Manchester United logo">
         <h3>Manchester United</h3>
-        <p>Legends, history, and glory — Old Trafford’s red devils.</p>
+        <p>The Red Devils of Old Trafford — history, glory, and legacy.</p>
+      </a>
+
+      <!-- Liverpool FC -->
+      <a href="https://www.transfermarkt.com/fc-liverpool/startseite/verein/31" target="_blank" class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg" alt="Liverpool logo">
+        <h3>Liverpool FC</h3>
+        <p>You’ll never walk alone — passion, tradition, and trophies.</p>
+      </a>
+
+      <!-- FC Bayern München -->
+      <a href="https://www.transfermarkt.com/fc-bayern-munchen/startseite/verein/27" target="_blank" class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/en/1/1f/FC_Bayern_München_logo_%282017%29.svg" alt="Bayern logo">
+        <h3>FC Bayern München</h3>
+        <p>Record champions of Germany — a powerhouse of consistency.</p>
+      </a>
+
+      <!-- SV Werder Bremen -->
+      <a href="https://www.transfermarkt.com/sv-werder-bremen/startseite/verein/86" target="_blank" class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/F/Fc/SV-Werder-Bremen-Logo.svg" alt="Werder Bremen logo">
+        <h3>Werder Bremen</h3>
+        <p>The green heart of northern Germany — loyal, proud, and loud.</p>
+      </a>
+
+      <!-- Juventus FC -->
+      <a href="https://www.transfermarkt.com/juventus-turin/startseite/verein/506" target="_blank" class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/en/3/30/Juventus_FC_2017_logo.svg" alt="Juventus logo">
+        <h3>Juventus FC</h3>
+        <p>The Old Lady of Turin — elegance, dominance, and black & white glory.</p>
+      </a>
+
+      <!-- AC Milan -->
+      <a href="https://www.transfermarkt.com/ac-mailand/startseite/verein/5" target="_blank" class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Logo_of_AC_Milan.svg" alt="AC Milan logo">
+        <h3>AC Milan</h3>
+        <p>Rossoneri — Italian style and seven-time European champions.</p>
+      </a>
+
+      <!-- Paris Saint-Germain -->
+      <a href="https://www.transfermarkt.com/paris-saint-germain/startseite/verein/583" target="_blank" class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/en/a/a7/Paris_Saint-Germain_F.C..svg" alt="PSG logo">
+        <h3>Paris Saint-Germain</h3>
+        <p>Where flair meets ambition — the pride of modern Paris.</p>
+      </a>
+
+      <!-- Boca Juniors -->
+      <a href="https://www.transfermarkt.com/boca-juniors/startseite/verein/189" target="_blank" class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/en/0/05/Boca_Juniors_logo18.svg" alt="Boca Juniors logo">
+        <h3>Boca Juniors</h3>
+        <p>Blue and yellow passion from Buenos Aires — La Bombonera lives.</p>
+      </a>
+
+      <!-- River Plate -->
+      <a href="https://www.transfermarkt.com/river-plate/startseite/verein/1009" target="_blank" class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/en/3/30/Club_Atl%C3%A9tico_River_Plate_logo.svg" alt="River Plate logo">
+        <h3>River Plate</h3>
+        <p>Argentina’s red and white giants — eternal rivals of Boca Juniors.</p>
+      </a>
+
+      <!-- Ajax Amsterdam -->
+      <a href="https://www.transfermarkt.com/ajax-amsterdam/startseite/verein/610" target="_blank" class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/en/7/79/Ajax_Amsterdam.svg" alt="Ajax logo">
+        <h3>Ajax Amsterdam</h3>
+        <p>Home of total football — a factory of legends and visionaries.</p>
       </a>
     </div>
   </section>
@@ -186,5 +301,3 @@
   </footer>
 </body>
 </html>
-
-
