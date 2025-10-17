@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About · Touchline Tales</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body { background-color:#0d0d0d; color:#f1f1f1; font-family:"Inter",sans-serif; margin:0; }
+    nav { background-color:#121212; text-align:center; padding:1rem; }
+    nav a { color:#f1f1f1; margin:0 1rem; text-decoration:none; font-weight:600; }
+    nav a:hover { color:#d4af37; }
+    main { max-width:800px; margin:2rem auto; padding:1rem; background:#1a1a1a; border-left:4px solid #d4af37; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.3); }
+    h1 { color:#d4af37; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="clubs.html">Clubs</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main>
+    <h1>About Touchline Tales</h1>
+    <p>
+      Touchline Tales is a global football blog celebrating clubs, culture, and stories from every corner of the world.
+      From the roaring stands of La Bombonera to the green heart of Bremen, this project is built by football lovers for football lovers.
+    </p>
+  </main>
+</body>
+</html>
