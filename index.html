@@ -6,28 +6,32 @@
   <title>Touchline Tales</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --gold: #d4af37;
+      --dark: #0d0d0d;
+      --card: #1a1a1a;
+    }
     body {
-      font-family: "Inter", Arial, sans-serif;
-      background-color: #0d0d0d;
+      font-family: "Inter", sans-serif;
+      background-color: var(--dark);
       color: #f1f1f1;
       margin: 0;
-      padding: 0;
       line-height: 1.6;
     }
     header {
-      background: linear-gradient(90deg, #1a1a1a, #0f0f0f);
-      color: #d4af37;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                  url("https://images.unsplash.com/photo-1608222351212-9b6ff86d2c9c?auto=format&fit=crop&w=1400&q=80") center/cover no-repeat;
       text-align: center;
-      padding: 2.5rem 1rem;
-      border-bottom: 2px solid #d4af37;
+      padding: 6rem 1rem;
+      color: var(--gold);
     }
     header h1 {
       font-size: 3rem;
       margin: 0;
     }
     header p {
-      color: #ccc;
-      font-size: 1.2rem;
+      color: #fff;
+      font-size: 1.3rem;
       margin-top: 0.5rem;
     }
     nav {
@@ -47,54 +51,95 @@
       transition: color 0.3s;
     }
     nav a:hover {
-      color: #d4af37;
+      color: var(--gold);
     }
-    main {
+    section {
       max-width: 900px;
-      margin: 2rem auto;
+      margin: 3rem auto;
       padding: 0 1.5rem;
     }
-    article {
-      background-color: #1a1a1a;
-      border-left: 4px solid #d4af37;
+    .intro {
+      text-align: center;
+    }
+    .intro h2 {
+      color: var(--gold);
+      font-size: 1.8rem;
+    }
+    .intro p {
+      color: #ccc;
+      max-width: 600px;
+      margin: 1rem auto;
+    }
+    .intro a {
+      display: inline-block;
+      margin-top: 1.2rem;
+      background-color: var(--gold);
+      color: var(--dark);
+      padding: 0.9rem 1.8rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+    .intro a:hover {
+      background-color: #b9972b;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .card {
+      background-color: var(--card);
+      border-left: 4px solid var(--gold);
       padding: 1.5rem;
-      margin-bottom: 2rem;
-      border-radius: 12px;
+      border-radius: 10px;
       box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      text-decoration: none;
+      color: inherit;
+      display: block;
     }
-    article:hover {
+    .card:hover {
       transform: translateY(-5px);
       box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
     }
-    article h2 {
-      color: #d4af37;
-      margin-top: 0;
+    .card img {
+      width: 60px;
+      height: auto;
+    }
+    .card h3 {
+      color: var(--gold);
+      margin-top: 0.5rem;
     }
     footer {
       text-align: center;
-      padding: 1.5rem;
-      background-color: #1a1a1a;
+      padding: 2rem;
+      background-color: #121212;
       border-top: 1px solid #333;
       color: #999;
       font-size: 0.9rem;
-      margin-top: 3rem;
+      margin-top: 4rem;
+    }
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+    footer a:hover {
+      text-decoration: underline;
     }
     @media (max-width: 700px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      nav a {
-        display: inline-block;
-        margin: 0.5rem;
-      }
+      header h1 { font-size: 2.2rem; }
+      .intro h2 { font-size: 1.5rem; }
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Touchline Tales</h1>
-    <p>Stories of iconic football clubs from every corner of the world</p>
+    <p>Exploring iconic football clubs across the globe 🌍</p>
   </header>
 
   <nav>
@@ -104,47 +149,39 @@
     <a href="contact.html">Contact</a>
   </nav>
 
-  <main>
-    <article>
-      <h2>⚽ FC Barcelona</h2>
-      <p>
-        Founded in 1899, FC Barcelona represents more than football — it’s a
-        symbol of Catalan culture and passion. From Johan Cruyff’s philosophy
-        to Lionel Messi’s brilliance, Barça’s legacy continues to shape the
-        beautiful game.
-      </p>
-    </article>
+  <section class="intro">
+    <h2>Welcome to Touchline Tales</h2>
+    <p>Dive into the stories, rivalries, and history of football’s most legendary clubs — from Buenos Aires to Bremen, the spirit of the game connects us all.</p>
+    <a href="clubs.html">Explore the Clubs →</a>
+  </section>
 
-    <article>
-      <h2>🏆 Werder Bremen</h2>
-      <p>
-        Die Werderaner sind einfach top – a club with history, loyalty, and heart.
-        The green-and-white from the Weserstadion have left their mark on German football.
-      </p>
-    </article>
-
-    <article>
-      <h2>🏆 Manchester United</h2>
-      <p>
-        The Red Devils of Old Trafford are a club of resilience and glory.
-        With legends like Sir Alex Ferguson, Ryan Giggs, and Wayne Rooney,
-        Manchester United’s history is written in golden letters.
-      </p>
-    </article>
-
-    <article>
-      <h2>🔥 Boca Juniors</h2>
-      <p>
-        In Buenos Aires, football is religion — and Boca Juniors are its
-        saints. Their famous blue-and-yellow colors and the thunderous La
-        Bombonera stadium make them one of the most passionate clubs on
-        Earth.
-      </p>
-    </article>
-  </main>
+  <section>
+    <div class="grid">
+      <a href="barcelona.html" class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg" alt="Barcelona logo">
+        <h3>FC Barcelona</h3>
+        <p>“Més que un club” — more than football. Discover the Catalan powerhouse.</p>
+      </a>
+      <a href="werder-bremen.html" class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/en/b/be/SV-Werder-Bremen-Logo.svg" alt="Werder Bremen logo">
+        <h3>Werder Bremen</h3>
+        <p>The heart of northern Germany — green, passionate, and loyal.</p>
+      </a>
+      <a href="manutd.html" class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg" alt="Man Utd logo">
+        <h3>Manchester United</h3>
+        <p>Legends, history, and glory — Old Trafford’s red devils.</p>
+      </a>
+    </div>
+  </section>
 
   <footer>
-    <p>© 2025 Touchline Tales · Crafted with love for the beautiful game</p>
+    <p>© 2025 Touchline Tales</p>
+    <p>
+      <a href="about.html">About</a> ·
+      <a href="clubs.html">Clubs</a> ·
+      <a href="contact.html">Contact</a>
+    </p>
   </footer>
 </body>
 </html>
