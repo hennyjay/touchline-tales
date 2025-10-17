@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clubs · Touchline Tales</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body { background-color:#0d0d0d; color:#f1f1f1; font-family:"Inter",sans-serif; margin:0; }
+    nav { background-color:#121212; text-align:center; padding:1rem; }
+    nav a { color:#f1f1f1; margin:0 1rem; text-decoration:none; font-weight:600; }
+    nav a:hover { color:#d4af37; }
+    h1 { color:#d4af37; text-align:center; margin-top:2rem; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1.5rem; padding:2rem; max-width:900px; margin:auto; }
+    .card { background:#1a1a1a; border-left:4px solid #d4af37; padding:1rem; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.3); transition:.2s; }
+    .card:hover { transform:translateY(-3px); box-shadow:0 0 15px rgba(212,175,55,.3); }
+    .card h3 { color:#d4af37; margin-top:0; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="clubs.html">Clubs</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <h1>Explore the Clubs</h1>
+  <div class="grid">
+    <div class="card">
+      <h3>FC Barcelona</h3>
+      <p>Founded in 1899 in Catalonia, Spain.</p>
+    </div>
+    <div class="card">
+      <h3>Werder Bremen</h3>
+      <p>The green heart of northern Germany.</p>
+    </div>
+    <div class="card">
+      <h3>Manchester United</h3>
+      <p>One of England’s most iconic clubs.</p>
+    </div>
+    <div class="card">
+      <h3>Boca Juniors</h3>
+      <p>Passion from Buenos Aires, Argentina.</p>
+    </div>
+  </div>
+</body>
+</html>
