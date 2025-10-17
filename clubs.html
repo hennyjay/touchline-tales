@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>All Clubs · Touchline Tales</title>
+  <title>Clubs · Touchline Tales</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --gold: #d4af37;
       --dark: #0d0d0d;
       --card: #1a1a1a;
+      --gradient-gold: linear-gradient(90deg, #d4af37, #f1e07a, #d4af37);
     }
 
     body {
@@ -21,21 +22,16 @@
     }
 
     header {
-      background-color: #1a1a1a;
-      color: var(--gold);
       text-align: center;
-      padding: 3rem 1rem;
-      border-bottom: 2px solid var(--gold);
+      padding: 4rem 1rem;
+      color: var(--gold);
+      text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+      animation: glowPulse 5s ease-in-out infinite alternate;
     }
 
-    header h1 {
-      font-size: 2.4rem;
-      margin: 0;
-    }
-
-    header p {
-      color: #ccc;
-      margin-top: 0.5rem;
+    @keyframes glowPulse {
+      from { text-shadow: 0 0 10px rgba(212,175,55,0.5); }
+      to   { text-shadow: 0 0 25px rgba(212,175,55,0.8); }
     }
 
     nav {
@@ -53,31 +49,24 @@
       margin: 0 1.2rem;
       font-weight: 600;
       letter-spacing: 0.5px;
-      transition: color 0.3s;
+      background-image: var(--gradient-gold);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      background-size: 200%;
+      transition: background-position 0.6s ease, opacity 0.3s;
+      opacity: 0.8;
     }
 
     nav a:hover {
-      color: var(--gold);
+      background-position: 100%;
+      opacity: 1;
     }
 
-    .container {
+    main {
       max-width: 1000px;
       margin: 3rem auto;
       padding: 0 1.5rem;
-    }
-
-    .filter {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    select {
-      background-color: #1a1a1a;
-      color: #f1f1f1;
-      border: 1px solid #333;
-      padding: 0.6rem 1rem;
-      border-radius: 6px;
-      font-family: inherit;
     }
 
     .grid {
@@ -93,26 +82,27 @@
       border-radius: 10px;
       box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      text-decoration: none;
+      color: inherit;
+      display: block;
     }
 
     .card:hover {
       transform: translateY(-5px);
       box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+      cursor: pointer;
     }
 
     .card img {
       width: 60px;
       height: auto;
+      display: block;
+      margin-bottom: 0.5rem;
     }
 
     .card h3 {
       color: var(--gold);
       margin-top: 0.5rem;
-    }
-
-    .card p {
-      color: #ccc;
-      font-size: 0.95rem;
     }
 
     footer {
@@ -134,19 +124,9 @@
     footer a:hover {
       text-decoration: underline;
     }
-
-    @media (max-width: 700px) {
-      header h1 { font-size: 2rem; }
-      .card { padding: 1rem; }
-    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>All Clubs</h1>
-    <p>Discover football stories from around the world</p>
-  </header>
-
   <nav>
     <a href="index.html">Home</a>
     <a href="clubs.html">Clubs</a>
@@ -154,115 +134,58 @@
     <a href="contact.html">Contact</a>
   </nav>
 
-  <div class="container">
-    <div class="filter">
-      <label for="continent">Filter by region: </label>
-      <select id="continent">
-        <option value="all">All</option>
-        <option value="europe">Europe</option>
-        <option value="south-america">South America</option>
-      </select>
-    </div>
+  <header>
+    <h1>Clubs Directory</h1>
+    <p>Explore football clubs across the globe — linked to their official Transfermarkt pages.</p>
+  </header>
 
+  <main>
     <div class="grid">
-      <!-- Europe -->
-      <div class="card" data-region="europe">
-        <img src="https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg" alt="Barcelona logo">
-        <h3>FC Barcelona (Spain)</h3>
-        <p>La Liga · Camp Nou · Founded 1899</p>
-      </div>
+      <a href="https://www.transfermarkt.de/fc-barcelona/startseite/verein/131" target="_blank" class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg" alt="Barcelona">
+        <h3>FC Barcelona</h3>
+        <p>Spain · Founded 1899</p>
+      </a>
 
-      <div class="card" data-region="europe">
-        <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg" alt="Real Madrid logo">
-        <h3>Real Madrid CF (Spain)</h3>
-        <p>La Liga · Santiago Bernabéu · Founded 1902</p>
-      </div>
+      <a href="https://www.transfermarkt.de/real-madrid/startseite/verein/418" target="_blank" class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg" alt="Real Madrid">
+        <h3>Real Madrid</h3>
+        <p>Spain · Founded 1902</p>
+      </a>
 
-      <div class="card" data-region="europe">
-        <img src="https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg" alt="Manchester United logo">
-        <h3>Manchester United (England)</h3>
-        <p>Premier League · Old Trafford · Founded 1878</p>
-      </div>
+      <a href="https://www.transfermarkt.de/fc-bayern-munchen/startseite/verein/27" target="_blank" class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/en/1/1f/FC_Bayern_München_logo_%282017%29.svg" alt="Bayern">
+        <h3>FC Bayern München</h3>
+        <p>Germany · Founded 1900</p>
+      </a>
 
-      <div class="card" data-region="europe">
-        <img src="https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg" alt="Liverpool logo">
-        <h3>Liverpool FC (England)</h3>
-        <p>Premier League · Anfield · Founded 1892</p>
-      </div>
+      <a href="https://www.transfermarkt.de/sv-werder-bremen/startseite/verein/86" target="_blank" class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/SV-Werder-Bremen-Logo.svg" alt="Werder Bremen">
+        <h3>Werder Bremen</h3>
+        <p>Germany · Founded 1899</p>
+      </a>
 
-      <div class="card" data-region="europe">
-        <img src="https://upload.wikimedia.org/wikipedia/en/1/1f/FC_Bayern_München_logo_%282017%29.svg" alt="Bayern logo">
-        <h3>FC Bayern München (Germany)</h3>
-        <p>Bundesliga · Allianz Arena · Founded 1900</p>
-      </div>
+      <a href="https://www.transfermarkt.de/manchester-united/startseite/verein/985" target="_blank" class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg" alt="Man Utd">
+        <h3>Manchester United</h3>
+        <p>England · Founded 1878</p>
+      </a>
 
-      <div class="card" data-region="europe">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/F/Fc/SV-Werder-Bremen-Logo.svg" alt="Werder Bremen logo">
-        <h3>SV Werder Bremen (Germany)</h3>
-        <p>Bundesliga · Weserstadion · Founded 1899</p>
-      </div>
-
-      <div class="card" data-region="europe">
-        <img src="https://upload.wikimedia.org/wikipedia/en/3/30/Juventus_FC_2017_logo.svg" alt="Juventus logo">
-        <h3>Juventus FC (Italy)</h3>
-        <p>Serie A · Allianz Stadium · Founded 1897</p>
-      </div>
-
-      <div class="card" data-region="europe">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Logo_of_AC_Milan.svg" alt="AC Milan logo">
-        <h3>AC Milan (Italy)</h3>
-        <p>Serie A · San Siro · Founded 1899</p>
-      </div>
-
-      <div class="card" data-region="europe">
-        <img src="https://upload.wikimedia.org/wikipedia/en/a/a7/Paris_Saint-Germain_F.C..svg" alt="PSG logo">
-        <h3>Paris Saint-Germain (France)</h3>
-        <p>Ligue 1 · Parc des Princes · Founded 1970</p>
-      </div>
-
-      <div class="card" data-region="south-america">
-        <img src="https://upload.wikimedia.org/wikipedia/en/0/05/Boca_Juniors_logo18.svg" alt="Boca Juniors logo">
-        <h3>Boca Juniors (Argentina)</h3>
-        <p>Primera División · La Bombonera · Founded 1905</p>
-      </div>
-
-      <div class="card" data-region="south-america">
-        <img src="https://upload.wikimedia.org/wikipedia/en/3/30/Club_Atl%C3%A9tico_River_Plate_logo.svg" alt="River Plate logo">
-        <h3>River Plate (Argentina)</h3>
-        <p>Primera División · El Monumental · Founded 1901</p>
-      </div>
-
-      <div class="card" data-region="europe">
-        <img src="https://upload.wikimedia.org/wikipedia/en/7/79/Ajax_Amsterdam.svg" alt="Ajax logo">
-        <h3>Ajax Amsterdam (Netherlands)</h3>
-        <p>Eredivisie · Johan Cruyff Arena · Founded 1900</p>
-      </div>
+      <a href="https://www.transfermarkt.de/boca-juniors/startseite/verein/189" target="_blank" class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/en/0/05/Boca_Juniors_logo18.svg" alt="Boca Juniors">
+        <h3>Boca Juniors</h3>
+        <p>Argentina · Founded 1905</p>
+      </a>
     </div>
-  </div>
+  </main>
 
   <footer>
     <p>© 2025 Touchline Tales</p>
     <p>
       <a href="about.html">About</a> ·
-      <a href="index.html">Home</a> ·
+      <a href="clubs.html">Clubs</a> ·
       <a href="contact.html">Contact</a>
     </p>
   </footer>
-
-  <script>
-    const select = document.getElementById('continent');
-    const cards = document.querySelectorAll('.card');
-
-    select.addEventListener('change', () => {
-      const value = select.value;
-      cards.forEach(card => {
-        if (value === 'all' || card.dataset.region === value) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
-  </script>
 </body>
 </html>
