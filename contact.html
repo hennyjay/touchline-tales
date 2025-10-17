@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact · Touchline Tales</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #d4af37;
+      --dark: #0d0d0d;
+      --card: #1a1a1a;
+      --gradient-gold: linear-gradient(90deg, #d4af37, #f1e07a, #d4af37);
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background-color: var(--dark);
+      color: #f1f1f1;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 5rem 1rem 3rem;
+      color: var(--gold);
+      text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+      animation: glowPulse 5s ease-in-out infinite alternate;
+    }
+
+    @keyframes glowPulse {
+      from { text-shadow: 0 0 10px rgba(212,175,55,0.5); }
+      to   { text-shadow: 0 0 25px rgba(212,175,55,0.8); }
+    }
+
+    nav {
+      background-color: #121212;
+      text-align: center;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      color: #f1f1f1;
+      text-decoration: none;
+      margin: 0 1.2rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      position: relative;
+      background-image: var(--gradient-gold);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      background-size: 200%;
+      transition: background-position 0.6s ease, opacity 0.3s;
+      opacity: 0.8;
+    }
+
+    nav a:hover {
+      background-position: 100%;
+      opacity: 1;
+    }
+
+    main {
+      max-width: 700px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+      text-align: center;
+    }
+
+    p {
+      color: #ccc;
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      background-color: #1a1a1a;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
+    }
+
+    input, textarea {
+      background-color: #0d0d0d;
+      border: 1px solid #333;
+      color: #f1f1f1;
+      border-radius: 6px;
+      padding: 0.8rem;
+      font-size: 1rem;
+      font-family: inherit;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    button {
+      background: var(--gradient-gold);
+      border: none;
+      color: var(--dark);
+      font-weight: 600;
+      padding: 0.9rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 10px rgba(212,175,55,0.4);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #121212;
+      border-top: 1px solid #333;
+      color: #999;
+      font-size: 0.9rem;
+      margin-top: 4rem;
+    }
+
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="clubs.html">Clubs</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <header>
+    <h1>Contact</h1>
+    <p>Get in touch with Touchline Tales ⚽</p>
+  </header>
+
+  <main>
+    <p>Whether you have feedback, suggestions, or collaboration ideas — I’d love to hear from you!</p>
+
+    <form action="mailto:yourname@example.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your name" required>
+      <input type="email" name="email" placeholder="Your email" required>
+      <textarea name="message" placeholder="Your message..." required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <p style="margin-top:2rem;">or connect on social media:</p>
+    <p>
+      <a href="https://www.instagram.com/HiddenGoalposts" target="_blank" style="color:#d4af37;">Instagram (@HiddenGoalposts)</a> ·
+      <a href="https://x.com" target="_blank" style="color:#d4af37;">X (Twitter)</a> ·
+      <a href="https://github.com/HiddenGoalposts" target="_blank" style="color:#d4af37;">GitHub</a>
+    </p>
+  </main>
+
+  <footer>
+    <p>© 2025 Touchline Tales</p>
+    <p>
+      <a href="about.html">About</a> ·
+      <a href="clubs.html">Clubs</a> ·
+      <a href="contact.html">Contact</a>
+    </p>
+  </footer>
+</body>
+</html>
