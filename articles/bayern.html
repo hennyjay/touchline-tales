@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FC Bayern München · Touchline Tales</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold:#d4af37;--dark:#0d0d0d;--card:#1a1a1a;
+      --gradient-gold:linear-gradient(90deg,#d4af37,#f1e07a,#d4af37);
+    }
+    body{font-family:"Inter",sans-serif;background:var(--dark);color:#f1f1f1;margin:0;line-height:1.7;
+      opacity:0;animation:fadeIn 1s ease forwards;}
+    @keyframes fadeIn{to{opacity:1;}}
+    nav{background:#121212;text-align:center;padding:1rem;position:sticky;top:0;z-index:10;}
+    nav a{text-decoration:none;margin:0 1.2rem;font-weight:600;
+      background-image:var(--gradient-gold);background-clip:text;-webkit-background-clip:text;
+      color:transparent;background-size:200%;transition:background-position .6s,opacity .3s;opacity:.8;}
+    nav a:hover{background-position:100%;opacity:1;}
+    header{background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+      url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1500&q=80") center/cover no-repeat;
+      text-align:center;padding:6rem 1rem;color:var(--gold);text-shadow:0 0 15px rgba(212,175,55,.5);}
+    main{max-width:800px;margin:3rem auto;padding:0 1.5rem;}
+    article{background:var(--card);padding:2rem;border-left:4px solid var(--gold);
+      border-radius:10px;box-shadow:0 0 15px rgba(0,0,0,.4);}
+    h1,h2{color:var(--gold);}
+    p{color:#ccc;margin-bottom:1rem;}
+    img{max-width:100%;border-radius:8px;margin:1.5rem 0;display:block;}
+    a.button{display:inline-block;margin-top:2rem;background:var(--gradient-gold);color:var(--dark);
+      padding:.8rem 1.5rem;border-radius:8px;font-weight:600;text-decoration:none;transition:transform .3s;}
+    a.button:hover{transform:translateY(-2px);}
+    .next-article{margin-top:3rem;padding-top:1rem;border-top:1px solid #333;text-align:center;}
+    .next-article a{color:var(--gold);text-decoration:none;font-weight:600;}
+    .next-article a:hover{text-decoration:underline;}
+    footer{text-align:center;padding:2rem;background:#121212;border-top:1px solid #333;color:#777;font-size:.85rem;margin-top:4rem;}
+    footer a{color:var(--gold);text-decoration:none;margin:0 .5rem;}
+    footer a:hover{text-decoration:underline;}
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../clubs.html">Clubs</a>
+    <a href="../about.html">About</a>
+    <a href="../contact.html">Contact</a>
+  </nav>
+
+  <header>
+    <h1>FC Bayern München</h1>
+    <p>“Mia san mia” – The relentless pursuit of excellence</p>
+  </header>
+
+  <main>
+    <article>
+      <img src="https://upload.wikimedia.org/wikipedia/en/1/1f/FC_Bayern_München_logo_%282017%29.svg" alt="FC Bayern Logo">
+      
+      <h2>Born from the heart of Munich</h2>
+      <p>
+        Founded in 1900 by eleven young men led by Franz John, FC Bayern München grew from a local sports club into
+        Germany’s greatest football dynasty. Its red colours and the Allianz Arena’s glow represent pride, precision,
+        and the unyielding Bavarian spirit.
+      </p>
+
+      <h2>The dominance era</h2>
+      <p>
+        With icons like Beckenbauer, Müller, Lahm, and Neuer, Bayern defined European excellence.
+        From the 1970s European Cups to the 2020 Treble, the club became synonymous with efficiency,
+        leadership, and consistency.
+      </p>
+
+      <h2>Cultural identity</h2>
+      <p>
+        “Mia san mia” — we are who we are — is more than a motto. It’s a philosophy blending
+        humility with ambition – a mentality that fuels Bayern’s dominance on and off the pitch.
+      </p>
+
+      <h2>Legacy</h2>
+      <p>
+        With an unmatched record in Germany and a global fanbase, Bayern continues to set standards in management,
+        development, and sports culture. The club represents not just victory – but values.
+      </p>
+
+      <a href="https://www.transfermarkt.de/fc-bayern-munchen/startseite/verein/27" target="_blank" class="button">View on Transfermarkt →</a>
+
+      <div class="next-article">
+        <p>Next story: <a href="barcelona.html">FC Barcelona – The Soul of Catalonia →</a></p>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <p>© 2025 Touchline Tales · <a href="../about.html">About</a> · <a href="../contact.html">Contact</a></p>
+  </footer>
+</body>
+</html>
